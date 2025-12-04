@@ -1,0 +1,150 @@
+<?php
+ Include 'db.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BSE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>NOTES</h1>
+                <a href="index.html">
+                <p class="tag">Bugema Uni Notes</p>
+                </a>
+            </div>
+
+            <!--
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </nav>
+            -->
+        </div>
+    </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h2>BSE</h2>
+      <p>Bachelors of Science in Software Engineering</p>
+    </section>
+
+    <section class="services-list">
+      <!--
+      <h3>Programming Languages & Technologies</h3>
+      https://drive.google.com/file/d/1fPvZjQ0LzJrSrWnuPHkWu_piJG5ZchKy/view?usp=sharing
+
+      -->
+      <div class="grid-3">
+
+        <div class="tech-card">
+          <h4>Python</h4>
+          <p>Backend services, automation, data pipelines, ML prototypes. Frameworks: Django, Flask, FastAPI.</p>
+          
+          <?php
+          $sql = "SELECT * FROM books";
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+              echo "<p>";
+              echo $row['bookId'];
+              echo "<p>";
+              echo $row['bookctm'];
+              echo "<p>";
+            }
+          } else {
+            echo "<p>No books available.</p>";
+          }
+          ?>
+
+        </div>
+
+        <div class="tech-card">
+          <h4>JavaScript / TypeScript</h4>
+          <p>Front-end and full-stack development with React, Vue, Angular, Node.js, Express.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Java</h4>
+          <p>Robust backend systems, Android apps, enterprise services. Frameworks: Spring Boot.</p>
+        </div>
+        <div class="tech-card">
+          <h4>C# / .NET</h4>
+          <p>Windows desktop apps, web APIs, game tooling, and enterprise systems using .NET Core.</p>
+        </div>
+        <div class="tech-card">
+          <h4>C / C++</h4>
+          <p>High-performance systems, native applications, embedded software.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Go</h4>
+          <p>Cloud-native services, microservices, and tooling with efficient concurrency.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Ruby & PHP</h4>
+          <p>Quick web apps, CMS integrations and legacy system maintenance (Rails, Laravel).</p>
+        </div>
+        <div class="tech-card">
+          <h4>Swift / Kotlin</h4>
+          <p>Native iOS and Android application development and cross-platform tooling.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-offerings">
+      <h3>Service Offerings</h3>
+      <ul>
+        <li>Custom desktop & command-line applications</li>
+        <li>Websites, SPAs and backend APIs</li>
+        <li>Mobile apps (iOS & Android)</li>
+        <li>Data engineering & integrations</li>
+        <li>DevOps, CI/CD, and cloud deployments</li>
+        <li>Testing, QA and code audits</li>
+        <li>Consulting, architecture and prototyping</li>
+      </ul>
+      <p class="cta-row"><a class="btn" href="contact.html">Request a Quote</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>DevCraft Solutions</h4>
+        <p>Custom software, websites, mobile and more.</p>
+      </div>
+      <div>
+        <!--
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        -->
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: kimbugweroges7@gmail.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">&copy; 2025 DevCraft Solutions</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
