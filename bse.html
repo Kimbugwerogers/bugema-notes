@@ -53,25 +53,13 @@
       <div class="grid-3">
 
         <div class="tech-card">
-          <h4>Python</h4>
-          <p>Backend services, automation, data pipelines, ML prototypes. Frameworks: Django, Flask, FastAPI.</p>
-          
-          <?php
-          $sql = "SELECT * FROM books";
-          $result = mysqli_query($conn, $sql);
-          if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-              echo "<p>";
-              echo $row['bookId'];
-              echo "<p>";
-              echo $row['bookctm'];
-              echo "<p>";
-            }
-          } else {
-            echo "<p>No books available.</p>";
-          }
-          ?>
+          <h4>Introduction to Writing  Skills</h4>
 
+         <a>
+          <href="https://docs.google.com/document/d/1MwS3YzbxY4xOx9BXlcDIRMzSy79l1FxE/
+         edit?usp=sharing&ouid=101375210317124518231&rtpof=true&sd=true">
+          <p> Link </p>
+         </a>
         </div>
 
         <div class="tech-card">
@@ -149,3 +137,4 @@
 </body>
 
 </html>
+
