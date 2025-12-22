@@ -1,9 +1,9 @@
 
 <?php
-$host = "192.168.100.215"; // Replace with your router's public IP
+$host = "192.0.0.0"; // Replace with your router's public IP
 $dbname = "bugemabooks";
 $username = "bu"; // The user configured for remote access
-$password = "HOPE2024";
+$password = "******";
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -20,3 +20,4 @@ try {
 // Close the connection (optional with PDO, it closes automatically when the script ends)
 $conn = null;
 ?>
+
